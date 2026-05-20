@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos Luque - Ilustraciones Personalizadas</title>
     <style>
-        /* Importamos Montserrat, la versión web exacta de Canva Sans */
+        /* Importamos Montserrat, la versión web idéntica a Canva Sans */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
         :root {
-            --color-rojo: #e02424; /* Rojo de tu PDF corporativo */
+            --color-rojo: #e02424; /* El rojo de tu PDF de Canva */
             --color-principal: #111111;
             --color-secundario: #555555;
             --color-fondo: #fcfcfc;
@@ -39,7 +39,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            text-align: left; /* Alineación estricta a la izquierda */
+            text-align: left; /* Alineado a la izquierda */
         }
 
         /* PORTADA */
@@ -78,7 +78,7 @@
             margin-bottom: 20px;
         }
 
-        /* Destacados en rojo estilo Canva */
+        /* Palabras clave en rojo estilo tu PDF original */
         strong, b {
             color: var(--color-rojo);
             font-weight: 600;
@@ -179,7 +179,6 @@
         }
 
         .grupo-campo input[type="text"],
-        .grupo-campo input[type="email"],
         .grupo-campo textarea {
             width: 100%;
             padding: 14px;
@@ -305,11 +304,11 @@
             </div>
 
             <div class="grupo-campo">
-                <label for="instructions">Comentarios o detalles (opcional)</label>
-                <textarea id="instructions" rows="3" placeholder="Ej. Lo quiero con fondo blanco..."></textarea>
+                <label for="instructions">Comentarios o especificaciones (opcional)</label>
+                <textarea id="instructions" rows="3" placeholder="Ej. Añade el nombre de mi perro abajo..."></textarea>
             </div>
 
-            <button type="button" onclick="enviarPedido()" class="btn-bloque btn-rojo">Hacer pedido (Adjunta tu foto en el correo)</button>
+            <button type="button" onclick="enviarPorGmail()" class="btn-bloque btn-rojo">Hacer pedido (Adjunta tu foto aquí)</button>
 
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marluji2009@gmail.com&su=Consulta sobre Ilustraciones Personalizadas" target="_blank" class="btn-bloque btn-linea">
                 Contacta conmigo
@@ -319,28 +318,34 @@
     </div>
 
     <script>
-        function enviarPedido() {
+        function enviarPorGmail() {
             const nombre = document.getElementById('name').value.trim();
             const notas = document.getElementById('instructions').value.trim();
             
             if(!nombre) {
-                alert('Por favor, introduce tu nombre antes de enviar.');
+                alert('Por favor, introduce tu nombre para poder procesar el pedido.');
                 return;
             }
 
-            const destinatario = "marluji2009@gmail.com";
-            const asunto = encodeURIComponent("Nuevo Encargo de Ilustración 24h - " + nombre);
+            const correoMarcos = "marluji2009@gmail.com";
+            const asuntoEmail = encodeURIComponent("Nuevo Pedido de Ilustración - " + nombre);
             
-            let cuerpo = "¡Hola Marcos!\n\n";
-            cuerpo += "Me gustaría encargarte una ilustración personalizada.\n\n";
-            cuerpo += "Nombre del cliente: " + nombre + "\n";
-            if(notas) cuerpo += "Notas adicionales: " + notas + "\n";
-            cuerpo += "\n(Por favor, no olvides adjuntar la fotografía que quieres que dibuje en este correo)";
+            // Construimos el cuerpo del correo de forma elegante
+            let mensajeCuerpo = "¡Hola Marcos!\n\n";
+            mensajeCuerpo += "Quiero realizar un encargo para una ilustración personalizada en 24h.\n\n";
+            mensajeCuerpo += "📌 Nombre del cliente: " + nombre + "\n";
+            if(notas) {
+                mensajeCuerpo += "📌 Detalles del dibujo: " + notas + "\n";
+            }
+            mensajeCuerpo += "\n📎 IMPORTANTE: Recuerda adjuntar la foto que quieres que dibuje haciendo clic en el icono del clip de correo antes de pulsar enviar.";
             
-            const cuerpoUrl = encodeURIComponent(cuerpo);
+            const mensajeFormateado = encodeURIComponent(mensajeCuerpo);
 
-            // Abre la aplicación de correo nativa del móvil u ordenador directamente
-            window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpoUrl}`;
+            // Abre una ventana directa en Gmail Web para redactar al instante
+            const enlaceGmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${correoMarcos}&su=${asuntoEmail}&body=${mensajeFormateado}`;
+            
+            // Intenta abrir la ventana de Gmail para que no se recargue la página actual
+            window.open(enlaceGmail, '_blank');
         }
     </script>
 
