@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos Luque - Retratos a Encargo</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        /* Importamos Montserrat que es la alternativa perfecta a Canva Sans en web */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
         :root {
             --color-principal: #111111;
@@ -25,7 +26,7 @@
         body {
             background-color: var(--color-fondo);
             color: var(--color-principal);
-            padding: 30px 20px;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
         }
@@ -34,30 +35,132 @@
             width: 100%;
             max-width: 650px;
             background: var(--color-blanco);
-            padding: 30px;
+            padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
         }
 
-        /* Visor para tu PDF literal */
-        .visor-pdf {
-            width: 100%;
-            height: 750px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 40px;
+        /* SECCIÓN 1: PORTADA */
+        .portada {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 20px 0;
         }
 
-        /* Formulario inferior estilo Canva */
+        .portada h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .portada .subtitulo {
+            font-size: 1.4rem;
+            color: var(--color-secundario);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* SECCIÓN 2: SOBRE MÍ Y TEXTO */
+        .sobre-mi {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .texto-presentacion {
+            font-size: 1.1rem;
+            color: var(--color-secundario);
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .texto-presentacion p {
+            margin-bottom: 20px;
+        }
+
+        .destaque-24h {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-principal);
+            text-align: center;
+            margin-top: 25px;
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
+            padding: 15px 0;
+        }
+
+        /* SECCIÓN 3: GALERÍA DE DIBUJOS MUESTRA */
+        .galeria-dibujos {
+            margin-bottom: 60px;
+        }
+
+        .galeria-dibujos h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Cuadrícula organizada para mostrar tus ejemplos */
+        .grid-dibujos {
+            display: block;
+        }
+
+        .foto-dibujo {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+        }
+
+        /* SECCIÓN 4: CÓMO FUNCIONA */
+        .como-funciona {
+            margin-bottom: 60px;
+        }
+
+        .como-funciona h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lista-pasos {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .paso {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            color: var(--color-secundario);
+            line-height: 1.5;
+        }
+
+        .paso strong {
+            color: var(--color-principal);
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        /* SECCIÓN 5: FORMULARIO DE COMPRA Y CONTACTO */
         .formulario-pedido {
             border-top: 2px solid #f0f0f0;
-            padding-top: 30px;
+            padding-top: 40px;
         }
 
         .formulario-pedido h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 700;
         }
 
@@ -67,7 +170,7 @@
 
         .grupo-campo label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 600;
             font-size: 0.95rem;
         }
@@ -75,7 +178,7 @@
         .grupo-campo input[type="text"],
         .grupo-campo input[type="email"] {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border: 1.5px solid #e0e0e0;
             border-radius: 8px;
             font-size: 1rem;
@@ -87,11 +190,11 @@
             border-color: var(--color-principal);
         }
 
-        /* Zona de arrastrar foto */
+        /* Botón de subir archivo interactivo */
         .zona-upload {
             position: relative;
             border: 2px dashed #cccccc;
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             text-align: center;
             background: #fafafa;
@@ -117,9 +220,10 @@
         .zona-upload p {
             font-size: 0.95rem;
             color: var(--color-secundario);
+            font-weight: 500;
         }
 
-        /* Botones estilo Canva */
+        /* BOTONES ESTILO CANVA */
         .btn-bloque {
             display: block;
             width: 100%;
@@ -141,7 +245,7 @@
         .btn-negro {
             background-color: var(--color-principal);
             color: var(--color-blanco);
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .btn-negro:hover {
@@ -162,9 +266,9 @@
         }
 
         @media (max-width: 600px) {
-            body { padding: 10px 5px; }
-            .contenedor-web { padding: 20px 15px; }
-            .visor-pdf { height: 450px; }
+            body { padding: 15px 10px; }
+            .contenedor-web { padding: 25px 20px; }
+            .portada h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -172,16 +276,54 @@
 
     <div class="contenedor-web">
 
-        <iframe class="visor-pdf" src="Personalizados en 24h.pdf" type="application/pdf">
-            <p>Tu navegador no puede mostrar el PDF directamente. <a href="Personalizados en 24h.pdf">Haz clic aquí para ver el catálogo.</a></p>
-        </iframe>
+        <section class="portada">
+            <h1>Retratos<br>A Encargo</h1>
+            <p class="subtitulo">Personalizados en 24h</p>
+        </section>
+
+        <section class="sobre-mi">
+            <div class="texto-presentacion">
+                <p>¡Hola! Soy <strong>Marcos Luque</strong>.</p>
+                <p>Si estás aquí, probablemente es porque buscas un regalo especial, te ha pillar el toro con las fechas o simplemente quieres darte un capricho único.</p>
+                <p>No te preocupes, estás en el lugar adecuado.</p>
+                <p>Me dedico a transformar tus fotos favoritas en retratos personalizados hechos a mano, cuidando cada detalle para capturar la esencia de las personas (o mascotas) que más quieres.</p>
+                <div class="destaque-24h">¿Lo mejor de todo? Lo tienes listo en 24 horas.</div>
+            </div>
+        </section>
+
+        <section class="galeria-dibujos">
+            <h2>Mis Trabajos</h2>
+            <div class="grid-dibujos">
+                <img src="dibujo1.jpg" alt="Retrato personalizado por Marcos Luque" class="foto-dibujo">
+                <img src="dibujo2.jpg" alt="Ejemplo de retrato hecho a mano" class="foto-dibujo">
+                <img src="dibujo3.jpg" alt="Muestra de retrato personalizado" class="foto-dibujo">
+            </div>
+        </section>
+
+        <section class="como-funciona">
+            <h2>¿Cómo funciona?</h2>
+            <div class="lista-pasos">
+                <div class="paso">
+                    <strong>1. Envías tu foto:</strong>
+                    Elige esa imagen que tanto te gusta (sirve la que tienes en el móvil).
+                </div>
+                <div class="paso">
+                    <strong>2. Me pongo manos a la obra:</strong>
+                    Dibujo tu retrato de forma totalmente personalizada.
+                </div>
+                <div class="paso">
+                    <strong>3. ¡Listo en 24h!</strong>
+                    Quedamos donde mejor te vaya y te entrego el resultado.
+                </div>
+            </div>
+        </section>
 
         <div class="formulario-pedido">
             <h3>Realizar Pedido</h3>
             
             <form action="https://formsubmit.co/marluji2009@gmail.com" method="POST" enctype="multipart/form-data">
                 
-                <input type="hidden" name="_subject" value="Nuevo Retrato Solicitado - 24h">
+                <input type="hidden" name="_subject" value="Nuevo Encargo de Retrato - Marcos Luque">
                 <input type="hidden" name="_next" value="https://placoaster.github.io/">
 
                 <div class="grupo-campo">
