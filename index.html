@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos Luque - Ilustraciones Personalizadas</title>
     <style>
+        /* Importamos Montserrat, la versión web exacta de Canva Sans */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
         :root {
-            --color-rojo: #e02424; /* El rojo corporativo de tu marca */
+            --color-rojo: #e02424; /* Rojo de tu PDF corporativo */
             --color-principal: #111111;
             --color-secundario: #555555;
             --color-fondo: #fcfcfc;
@@ -38,7 +39,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            text-align: left; /* Todo estrictamente alineado a la izquierda */
+            text-align: left; /* Alineación estricta a la izquierda */
         }
 
         /* PORTADA */
@@ -77,7 +78,7 @@
             margin-bottom: 20px;
         }
 
-        /* Negritas rojas como el documento de Canva */
+        /* Destacados en rojo estilo Canva */
         strong, b {
             color: var(--color-rojo);
             font-weight: 600;
@@ -113,7 +114,6 @@
             gap: 25px;
         }
 
-        /* Contenedor adaptativo para que tus fotos carguen sin importar su formato */
         .contenedor-foto {
             width: 100%;
             background: #fdfdfd;
@@ -179,7 +179,8 @@
         }
 
         .grupo-campo input[type="text"],
-        .grupo-campo input[type="email"] {
+        .grupo-campo input[type="email"],
+        .grupo-campo textarea {
             width: 100%;
             padding: 14px;
             border: 1.5px solid #e0e0e0;
@@ -188,45 +189,17 @@
             transition: border-color 0.2s;
         }
 
-        .grupo-campo input:focus {
+        .grupo-campo textarea {
+            resize: vertical;
+        }
+
+        .grupo-campo input:focus,
+        .grupo-campo textarea:focus {
             outline: none;
             border-color: var(--color-rojo);
         }
 
-        /* Subida de foto limpia */
-        .zona-upload {
-            position: relative;
-            border: 2px dashed #cccccc;
-            padding: 30px;
-            border-radius: 8px;
-            background: #fafafa;
-            cursor: pointer;
-            text-align: center;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-        .zona-upload:hover {
-            border-color: var(--color-rojo);
-            background: #fbfbfb;
-        }
-
-        .zona-upload input[type="file"] {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .zona-upload p {
-            font-size: 0.95rem;
-            color: var(--color-secundario);
-            font-weight: 500;
-        }
-
-        /* BOTONES */
+        /* BOTONES ESTILO CANVA */
         .btn-bloque {
             display: block;
             width: 100%;
@@ -286,7 +259,12 @@
 
         <section class="sobre-mi">
             <div class="texto-presentacion">
-                <p>¡Hola! Soy <strong>Marcos Luque</strong>.</p> <p>Si estás aquí, probablemente es porque buscas un regalo especial, te ha <strong>pillar el toro</strong> con las fechas o simplemente quieres darte un capricho único.</p> <p>No te preocupes, estás en el lugar adecuado.</p> <p>Me dedico a transformar tus fotos favoritas en <strong>retratos personalizados hechos a mano</strong>, cuidando cada detalle para capturar la esencia de las personas (o mascotas) que más quieres.</p> <div class="destaque-24h">¿Lo mejor de todo? Lo tienes listo en 24 horas.</div> </div>
+                <p>¡Hola! Soy <strong>Marcos Luque</strong>.</p>
+                <p>Si estás aquí, probablemente es porque buscas un regalo especial, te ha <strong>pillar el toro</strong> con las fechas o simplemente quieres darte un capricho único.</p>
+                <p>No te preocupes, estás en el lugar adecuado.</p>
+                <p>Me dedico a transformar tus fotos favoritas en <strong>retratos personalizados hechos a mano</strong>, cuidando cada detalle para capturar la esencia de las personas (o mascotas) que más quieres.</p>
+                <div class="destaque-24h">¿Lo mejor de todo? Lo tienes listo en 24 horas.</div>
+            </div>
         </section>
 
         <section class="galeria-dibujos">
@@ -301,41 +279,37 @@
         </section>
 
         <section class="como-funciona">
-            <h2>¿Cómo funciona?</h2> <div class="lista-pasos">
+            <h2>¿Cómo funciona?</h2>
+            <div class="lista-pasos">
                 <div class="paso">
-                    <strong>1. Envías tu foto:</strong> Elige esa imagen que tanto te gusta (sirve la que tienes en el móvil). </div>
+                    <strong>1. Envías tu foto:</strong>
+                    Elige esa imagen que tanto te gusta (sirve la que tienes en el móvil).
+                </div>
                 <div class="paso">
-                    <strong>2. Me pongo manos a la obra:</strong> Dibujo tu retrato de forma totalmente personalizada. </div>
+                    <strong>2. Me pongo manos a la obra:</strong>
+                    Dibujo tu retrato de forma totalmente personalizada.
+                </div>
                 <div class="paso">
-                    <strong>3. ¡Listo en 24h!</strong> Quedamos donde mejor te vaya y te entrego el resultado. </div>
+                    <strong>3. ¡Listo en 24h!</strong>
+                    Quedamos donde mejor te vaya y te entrego el resultado.
+                </div>
             </div>
         </section>
 
         <div class="formulario-pedido">
             <h3>Realizar Pedido</h3>
             
-            <form action="https://formspree.io/f/TU_ID_AQUÍ" method="POST" enctype="multipart/form-data">
-                
-                <div class="grupo-campo">
-                    <label for="name">Tu Nombre</label>
-                    <input type="text" id="name" name="name" required placeholder="Ej. Juan Pérez">
-                </div>
+            <div class="grupo-campo">
+                <label for="name">Tu Nombre</label>
+                <input type="text" id="name" required placeholder="Ej. Juan Pérez">
+            </div>
 
-                <div class="grupo-campo">
-                    <label for="email">Tu Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required placeholder="Ej. juan@correo.com">
-                </div>
+            <div class="grupo-campo">
+                <label for="instructions">Comentarios o detalles (opcional)</label>
+                <textarea id="instructions" rows="3" placeholder="Ej. Lo quiero con fondo blanco..."></textarea>
+            </div>
 
-                <div class="grupo-campo">
-                    <label>Sube la foto para tu ilustración</label>
-                    <div class="zona-upload">
-                        <p id="texto-upload">Haz clic aquí para seleccionar tu foto</p>
-                        <input type="file" id="archivo-foto" name="upload" accept="image/*" required>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-bloque btn-rojo">Enviar fotos y hacer pedido</button>
-            </form>
+            <button type="button" onclick="enviarPedido()" class="btn-bloque btn-rojo">Hacer pedido (Adjunta tu foto en el correo)</button>
 
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=marluji2009@gmail.com&su=Consulta sobre Ilustraciones Personalizadas" target="_blank" class="btn-bloque btn-linea">
                 Contacta conmigo
@@ -345,16 +319,29 @@
     </div>
 
     <script>
-        const inputFoto = document.getElementById('archivo-foto');
-        const textoUpload = document.getElementById('texto-upload');
-
-        inputFoto.addEventListener('change', function() {
-            if (this.files && this.files.length > 0) {
-                textoUpload.innerHTML = `<span style="color: #16a34a; font-weight: 600;">✔️ Foto cargada:</span> ${this.files[0].name}`;
-            } else {
-                textoUpload.innerText = "Haz clic aquí para seleccionar tu foto";
+        function enviarPedido() {
+            const nombre = document.getElementById('name').value.trim();
+            const notas = document.getElementById('instructions').value.trim();
+            
+            if(!nombre) {
+                alert('Por favor, introduce tu nombre antes de enviar.');
+                return;
             }
-        });
+
+            const destinatario = "marluji2009@gmail.com";
+            const asunto = encodeURIComponent("Nuevo Encargo de Ilustración 24h - " + nombre);
+            
+            let cuerpo = "¡Hola Marcos!\n\n";
+            cuerpo += "Me gustaría encargarte una ilustración personalizada.\n\n";
+            cuerpo += "Nombre del cliente: " + nombre + "\n";
+            if(notas) cuerpo += "Notas adicionales: " + notas + "\n";
+            cuerpo += "\n(Por favor, no olvides adjuntar la fotografía que quieres que dibuje en este correo)";
+            
+            const cuerpoUrl = encodeURIComponent(cuerpo);
+
+            // Abre la aplicación de correo nativa del móvil u ordenador directamente
+            window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpoUrl}`;
+        }
     </script>
 
 </body>
