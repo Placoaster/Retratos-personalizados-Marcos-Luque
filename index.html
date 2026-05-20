@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos Luque - Ilustraciones Personalizadas</title>
     <style>
-        /* Importamos Montserrat, que es la versión web idéntica a Canva Sans */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
         :root {
-            --color-rojo: #e02424; /* El rojo corporativo de tu PDF */
+            --color-rojo: #e02424; /* El rojo corporativo de tu marca */
             --color-principal: #111111;
             --color-secundario: #555555;
             --color-fondo: #fcfcfc;
@@ -39,22 +38,22 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            text-align: left; /* Todo el texto a la izquierda */
+            text-align: left; /* Todo estrictamente alineado a la izquierda */
         }
 
-        /* SECCIÓN 1: PORTADA */
+        /* PORTADA */
         .portada {
             margin-bottom: 50px;
         }
 
         .portada h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             line-height: 1.2;
             margin-bottom: 15px;
-            color: var(--color-rojo); /* Título en rojo */
+            color: var(--color-rojo);
         }
 
         .portada .subtitulo {
@@ -63,7 +62,7 @@
             font-weight: 500;
         }
 
-        /* SECCIÓN 2: PRESENTACIÓN */
+        /* PRESENTACIÓN */
         .sobre-mi {
             margin-bottom: 50px;
         }
@@ -78,8 +77,8 @@
             margin-bottom: 20px;
         }
 
-        /* Negritas importantes en color rojo */
-        strong {
+        /* Negritas rojas como el documento de Canva */
+        strong, b {
             color: var(--color-rojo);
             font-weight: 600;
         }
@@ -94,7 +93,7 @@
             padding: 15px 0;
         }
 
-        /* SECCIÓN 3: GALERÍA DE IMÁGENES */
+        /* GALERÍA DE TRABAJOS */
         .galeria-dibujos {
             margin-bottom: 50px;
         }
@@ -111,18 +110,26 @@
         .grid-dibujos {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
+        }
+
+        /* Contenedor adaptativo para que tus fotos carguen sin importar su formato */
+        .contenedor-foto {
+            width: 100%;
+            background: #fdfdfd;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            overflow: hidden;
         }
 
         .foto-dibujo {
             width: 100%;
+            display: block;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            border: 1px solid #f0f0f0;
         }
 
-        /* SECCIÓN 4: CÓMO FUNCIONA */
+        /* CÓMO FUNCIONA */
         .como-funciona {
             margin-bottom: 50px;
         }
@@ -145,10 +152,9 @@
             display: block;
             font-size: 1.2rem;
             margin-bottom: 4px;
-            color: var(--color-rojo);
         }
 
-        /* SECCIÓN 5: FORMULARIO */
+        /* FORMULARIO DE PEDIDO */
         .formulario-pedido {
             border-top: 2px solid #f0f0f0;
             padding-top: 40px;
@@ -187,7 +193,7 @@
             border-color: var(--color-rojo);
         }
 
-        /* Zona interactiva de subida */
+        /* Subida de foto limpia */
         .zona-upload {
             position: relative;
             border: 2px dashed #cccccc;
@@ -200,8 +206,8 @@
         }
 
         .zona-upload:hover {
-            background: #f2f2f2;
             border-color: var(--color-rojo);
+            background: #fbfbfb;
         }
 
         .zona-upload input[type="file"] {
@@ -265,7 +271,7 @@
         @media (max-width: 600px) {
             body { padding: 15px 10px; }
             .contenedor-web { padding: 25px 20px; }
-            .portada h1 { font-size: 2rem; }
+            .portada h1 { font-size: 1.9rem; }
         }
     </style>
 </head>
@@ -280,52 +286,36 @@
 
         <section class="sobre-mi">
             <div class="texto-presentacion">
-                <p>¡Hola! Soy <strong>Marcos Luque</strong>.</p>
-                <p>Si estás aquí, probablemente es porque buscas un regalo especial, te ha <strong>pillar el toro</strong> con las fechas o simplemente quieres darte un capricho único.</p>
-                <p>No te preocupes, estás en el lugar adecuado.</p>
-                <p>Me dedico a transformar tus fotos favoritas en <strong>retratos personalizados hechos a mano</strong>, cuidando cada detalle para capturar la esencia de las personas (o mascotas) que más quieres.</p>
-                <div class="destaque-24h">¿Lo mejor de todo? Lo tienes listo en 24 horas.</div>
-            </div>
+                <p>¡Hola! Soy <strong>Marcos Luque</strong>.</p> <p>Si estás aquí, probablemente es porque buscas un regalo especial, te ha <strong>pillar el toro</strong> con las fechas o simplemente quieres darte un capricho único.</p> <p>No te preocupes, estás en el lugar adecuado.</p> <p>Me dedico a transformar tus fotos favoritas en <strong>retratos personalizados hechos a mano</strong>, cuidando cada detalle para capturar la esencia de las personas (o mascotas) que más quieres.</p> <div class="destaque-24h">¿Lo mejor de todo? Lo tienes listo en 24 horas.</div> </div>
         </section>
 
         <section class="galeria-dibujos">
             <h2>Mis Trabajos</h2>
             <div class="grid-dibujos">
-                <img src="dibujo1.jpg" alt="Ilustración personalizada Marcos Luque" class="foto-dibujo">
-                <img src="dibujo2.jpg" alt="Dibujo personalizado hecho a mano" class="foto-dibujo">
-                <img src="dibujo3.jpg" alt="Retrato a partir de foto" class="foto-dibujo">
-                <img src="dibujo4.jpg" alt="Ilustración a mano" class="foto-dibujo">
-                <img src="dibujo5.jpg" alt="Muestra de arte personalizado" class="foto-dibujo">
+                <div class="contenedor-foto"><img src="dibujo1.jpg" alt="Dibujo 1" class="foto-dibujo" onerror="this.src='dibujo1.png'; this.onerror=function(){this.src='dibujo1.jpeg';}"></div>
+                <div class="contenedor-foto"><img src="dibujo2.jpg" alt="Dibujo 2" class="foto-dibujo" onerror="this.src='dibujo2.png'; this.onerror=function(){this.src='dibujo2.jpeg';}"></div>
+                <div class="contenedor-foto"><img src="dibujo3.jpg" alt="Dibujo 3" class="foto-dibujo" onerror="this.src='dibujo3.png'; this.onerror=function(){this.src='dibujo3.jpeg';}"></div>
+                <div class="contenedor-foto"><img src="dibujo4.jpg" alt="Dibujo 4" class="foto-dibujo" onerror="this.src='dibujo4.png'; this.onerror=function(){this.src='dibujo4.jpeg';}"></div>
+                <div class="contenedor-foto"><img src="dibujo5.jpg" alt="Dibujo 5" class="foto-dibujo" onerror="this.src='dibujo5.png'; this.onerror=function(){this.src='dibujo5.jpeg';}"></div>
             </div>
         </section>
 
         <section class="como-funciona">
-            <h2>¿Cómo funciona?</h2>
-            <div class="lista-pasos">
+            <h2>¿Cómo funciona?</h2> <div class="lista-pasos">
                 <div class="paso">
-                    <strong>1. Envías tu foto:</strong>
-                    Elige esa imagen que tanto te gusta (sirve la que tienes en el móvil).
-                </div>
+                    <strong>1. Envías tu foto:</strong> Elige esa imagen que tanto te gusta (sirve la que tienes en el móvil). </div>
                 <div class="paso">
-                    <strong>2. Me pongo manos a la obra:</strong>
-                    Dibujo tu retrato de forma totalmente personalizada.
-                </div>
+                    <strong>2. Me pongo manos a la obra:</strong> Dibujo tu retrato de forma totalmente personalizada. </div>
                 <div class="paso">
-                    <strong>3. ¡Listo en 24h!</strong>
-                    Quedamos donde mejor te vaya y te entrego el resultado.
-                </div>
+                    <strong>3. ¡Listo en 24h!</strong> Quedamos donde mejor te vaya y te entrego el resultado. </div>
             </div>
         </section>
 
         <div class="formulario-pedido">
             <h3>Realizar Pedido</h3>
             
-            <form action="https://formsubmit.co/marluji2009@gmail.com" method="POST" enctype="multipart/form-data">
+            <form action="https://formspree.io/f/TU_ID_AQUÍ" method="POST" enctype="multipart/form-data">
                 
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_subject" value="Nuevo Encargo de Ilustración - Marcos Luque">
-                <input type="hidden" name="_next" value="https://placoaster.github.io/">
-
                 <div class="grupo-campo">
                     <label for="name">Tu Nombre</label>
                     <input type="text" id="name" name="name" required placeholder="Ej. Juan Pérez">
@@ -340,7 +330,7 @@
                     <label>Sube la foto para tu ilustración</label>
                     <div class="zona-upload">
                         <p id="texto-upload">Haz clic aquí para seleccionar tu foto</p>
-                        <input type="file" id="archivo-foto" name="attachment" accept="image/*" required>
+                        <input type="file" id="archivo-foto" name="upload" accept="image/*" required>
                     </div>
                 </div>
 
@@ -360,8 +350,7 @@
 
         inputFoto.addEventListener('change', function() {
             if (this.files && this.files.length > 0) {
-                // Confirmación interactiva visual en color verde
-                textoUpload.innerHTML = `<span style="color: #16a34a; font-weight: 600;">✔️ Foto lista:</span> ${this.files[0].name}`;
+                textoUpload.innerHTML = `<span style="color: #16a34a; font-weight: 600;">✔️ Foto cargada:</span> ${this.files[0].name}`;
             } else {
                 textoUpload.innerText = "Haz clic aquí para seleccionar tu foto";
             }
