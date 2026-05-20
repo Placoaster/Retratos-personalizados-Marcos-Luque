@@ -39,7 +39,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            text-align: left; /* Todo el contenido alineado a la izquierda */
+            text-align: left; /* Todo el texto a la izquierda */
         }
 
         /* SECCIÓN 1: PORTADA */
@@ -54,7 +54,7 @@
             letter-spacing: 1px;
             line-height: 1.2;
             margin-bottom: 15px;
-            color: var(--color-rojo); /* Título principal en rojo */
+            color: var(--color-rojo); /* Título en rojo */
         }
 
         .portada .subtitulo {
@@ -78,7 +78,7 @@
             margin-bottom: 20px;
         }
 
-        /* Negritas en rojo estilo PDF */
+        /* Negritas importantes en color rojo */
         strong {
             color: var(--color-rojo);
             font-weight: 600;
@@ -105,7 +105,7 @@
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--color-rojo); /* Título de sección en rojo */
+            color: var(--color-rojo);
         }
 
         .grid-dibujos {
@@ -145,9 +145,10 @@
             display: block;
             font-size: 1.2rem;
             margin-bottom: 4px;
+            color: var(--color-rojo);
         }
 
-        /* SECCIÓN 5: FORMULARIO DE COMPRA */
+        /* SECCIÓN 5: FORMULARIO */
         .formulario-pedido {
             border-top: 2px solid #f0f0f0;
             padding-top: 40px;
@@ -186,7 +187,7 @@
             border-color: var(--color-rojo);
         }
 
-        /* Zona de subida de archivos */
+        /* Zona interactiva de subida */
         .zona-upload {
             position: relative;
             border: 2px dashed #cccccc;
@@ -194,6 +195,7 @@
             border-radius: 8px;
             background: #fafafa;
             cursor: pointer;
+            text-align: center;
             transition: background 0.2s, border-color 0.2s;
         }
 
@@ -289,11 +291,11 @@
         <section class="galeria-dibujos">
             <h2>Mis Trabajos</h2>
             <div class="grid-dibujos">
-                <img src="foto1.jpg" alt="Ilustración personalizada Marcos Luque" class="foto-dibujo">
-                <img src="foto2.jpg" alt="Dibujo personalizado hecho a mano" class="foto-dibujo">
-                <img src="foto3.jpg" alt="Retrato a partir de foto" class="foto-dibujo">
-                <img src="foto4.jpg" alt="Ilustración a mano" class="foto-dibujo">
-                <img src="foto5.jpg" alt="Muestra de arte personalizado" class="foto-dibujo">
+                <img src="dibujo1.jpg" alt="Ilustración personalizada Marcos Luque" class="foto-dibujo">
+                <img src="dibujo2.jpg" alt="Dibujo personalizado hecho a mano" class="foto-dibujo">
+                <img src="dibujo3.jpg" alt="Retrato a partir de foto" class="foto-dibujo">
+                <img src="dibujo4.jpg" alt="Ilustración a mano" class="foto-dibujo">
+                <img src="dibujo5.jpg" alt="Muestra de arte personalizado" class="foto-dibujo">
             </div>
         </section>
 
@@ -320,9 +322,9 @@
             
             <form action="https://formsubmit.co/marluji2009@gmail.com" method="POST" enctype="multipart/form-data">
                 
+                <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_subject" value="Nuevo Encargo de Ilustración - Marcos Luque">
                 <input type="hidden" name="_next" value="https://placoaster.github.io/">
-                <input type="hidden" name="_captcha" value="false">
 
                 <div class="grupo-campo">
                     <label for="name">Tu Nombre</label>
@@ -337,8 +339,8 @@
                 <div class="grupo-campo">
                     <label>Sube la foto para tu ilustración</label>
                     <div class="zona-upload">
-                        <p>Haz clic aquí para seleccionar tu foto</p>
-                        <input type="file" name="attachment" accept="image/*" required>
+                        <p id="texto-upload">Haz clic aquí para seleccionar tu foto</p>
+                        <input type="file" id="archivo-foto" name="attachment" accept="image/*" required>
                     </div>
                 </div>
 
@@ -351,6 +353,20 @@
         </div>
 
     </div>
+
+    <script>
+        const inputFoto = document.getElementById('archivo-foto');
+        const textoUpload = document.getElementById('texto-upload');
+
+        inputFoto.addEventListener('change', function() {
+            if (this.files && this.files.length > 0) {
+                // Confirmación interactiva visual en color verde
+                textoUpload.innerHTML = `<span style="color: #16a34a; font-weight: 600;">✔️ Foto lista:</span> ${this.files[0].name}`;
+            } else {
+                textoUpload.innerText = "Haz clic aquí para seleccionar tu foto";
+            }
+        });
+    </script>
 
 </body>
 </html>
